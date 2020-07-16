@@ -64,8 +64,8 @@ const App = () => {
                 .create(nameObject)
                 .then(returnedName => {
                     setPersons(persons.concat(returnedName))
+                    addNameSuc(returnedName, 0)
                 })
-            addNameSuc(nameObject,0)
             hook()
         }
         else {
@@ -80,8 +80,8 @@ const App = () => {
                     .update(persont.id, newObject)
                     .then(returnedName => {
                         setPersons(persons.concat(returnedName))
-                    })
-                addNameSuc(newObject,1)
+                        addNameSuc(returnedName, 1)
+                    })            
                 hook()
             }
         }     
